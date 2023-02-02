@@ -1,0 +1,543 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.header{
+    height: 100vh;
+/*
+    background-image: linear-gradient(to top, rgba(161, 140, 209, 0.404) 0%, rgba(251, 194, 235, 0.404) 100%), url(../img/head2.jpg); 
+*/
+
+   background-image: linear-gradient(to top, rgba(161, 140, 209, 0.404) 0%, rgba(251, 194, 235, 0.404) 100%), url(../img/head6.jpg);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.head{
+    text-align: center;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.hamburger{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+/*
+.header .hamburger:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgb(69, 41, 145);
+} 
+
+*/
+
+
+.menu-navegacion{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    height: 100%;
+    /*background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
+    background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: transform .3s ease-in-out;
+    transform: translate(100%) ;
+    box-shadow: 0 0 6px rgb(0, 0, 0, .5);
+}
+
+/*header:hover .menu-navegacion{
+    transform: translate(110%);
+}*/
+
+
+
+.spread{
+    transform: translate(0);
+}
+
+.menu-navegacion a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.titulo{
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.parrafo1{
+    font-weight: 300;
+    font-size:30px;
+}
+
+.subtitulo{
+    text-align: center;
+    font-weight: 300;
+    color: #9f8ad0;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+.contenedor-servicio{
+    /*display: flex;*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contenedor-servicio img{
+    width: 40%;
+}
+
+.checklist-servicio{
+    width: 45%;
+}
+
+.n-service{
+    margin-bottom: 20px;
+    color: black;
+}
+
+.parrafo2{
+    font-weight: 200;
+}
+
+.cta{
+    display: inline-block;
+    background-color: #2091F9;
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+    padding-top: 8px;
+}
+
+/*
+.conocenos{
+    display: flex;
+    background-color: #e5e5f7;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+*/
+
+/*Esta es la parte del slider que muestra cada una de las organizaciones*/
+
+.testimony{
+    background-color: #e5e5f7;
+    padding-top: 40px;
+}
+
+.testimony__container{
+    display: grid;
+    padding: 50px 0;
+    grid-template-columns: 50px 1fr 50px;
+
+    gap: 1em;
+    align-items: center;
+}
+
+.testimony__body{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.testimony__body--show{
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+
+.testimony__img{
+    width: 350px;
+    height: 350px;
+    /*border-radius: 50%;*/
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimony__texts{
+    max-width: 700px;
+}
+
+.testimony__course{
+    background-color: royalblue;
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+}
+
+.testimony__arrow{
+    width: 90%;
+    cursor: pointer;
+}
+
+
+/*Sigue la parte de la terjetas de los precios*/
+
+.price{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 150px;
+}
+
+.price__table{
+    padding-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    justify-content: space-evenly;
+    align-items: center;
+    /*box-shadow: 0 2px 2px rgba(0,0,0,0.2); /*Esto es una linea sombreada debajo de los precios*/
+    transition: all 0.25s;
+}
+
+/*Lo del hover, es para realizar una pequeña transicion al posicionar el puntero sobre algun item, en este caso las tarjetas de los precios*/
+
+.price__table .price__element:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgb(69, 41, 145);
+}
+
+.price__element{
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    text-align: center;
+    border-radius: 10px;
+    width: 330px;
+    padding: 40px;
+    --color-plan: #000000; /*Estas son customs property*/
+    --color-price: #1D293F;
+    --bg-cta: #fff;
+    --color-cta: #5454D4;
+    --color-items: #000000;
+
+}
+
+.price__element--best{
+    width: 370px;
+    padding: 60px 40px;
+    background-color: #FF7143;
+    --color-plan: rgb(255 255 255 / 75%); /*Estas son customs property*/
+    --color-price: #fff;
+    --bg-cta: #9F3919;
+    --color-cta: #fff;
+    --color-items: #fff;
+}
+
+
+.price__name{
+    
+    
+    color: var(--color-plan);
+    margin-bottom: 30px;
+    /*
+    font-weight: 300;
+    font-size: 300%;
+    */
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.price__price{
+    font-size: 2.5rem;
+    color: var(--color-price);
+}
+
+.price__items{
+    margin-top: 35px;
+    display: grid;
+    gap: 1em;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: var(--color-items);
+}
+
+.price__cta{
+    display: block;
+    padding: 20px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--bg-cta);
+    font-weight: 600;
+    color: var(--color-cta);
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+}
+
+
+/*Sigue la parte del footer*/
+
+footer{
+    background: #9f8ad0;
+    padding-bottom: 0.1px;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.contact-us{
+    width: 40%;
+    color: #fff;
+}
+
+.brand{
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.brand+p{
+    font-weight: 500;
+}
+
+.social-media{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-media-icon{
+    display: inline-block;
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+}
+
+
+.social-media-icon i{
+    font-size: 30px;
+    line-height: 60px;
+}
+
+
+.line{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 2px;
+    background: #fff;
+    margin-bottom: 60px;
+}
+
+
+.social-media-icon:hover{
+    background: #fff;
+    color: #764ba2;
+}
+
+
+/*Prueba de un boton con colores chidos*/
+
+/*
+.button{
+    background: black;
+    border: none;
+    padding: 16px 32px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+    red, blue, deeppink, blue,
+    red, blue, deeppink, blue);
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing{
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+
+}
+
+
+*/
+
+
+
+/*
+
+Los mediaquerys son para hacer la pagina responsive, es decir que sea adaptable a dispositivos moviles o a un tamaño menor que el de una pantalla
+
+@media screen and (max-width: 800px){
+    .menu-navegacion{
+        width: 50vw;
+    }
+
+    .titulo{
+        font-size: 40px;
+    }
+
+    .contenedor-servicio{
+        width: 80%;
+        margin-bottom: 40px;
+    }
+
+    .checklist-servicio{
+        width: 80%;
+    }
+
+    .service{
+        margin-bottom: 30px;
+    }
+
+    .agregar-imagen{
+        width: 80%;
+    }
+
+    .img-galeria{
+        width: 45%;
+    }
+
+    .cont-expert{
+        width: 80%;
+    }
+
+    .footer-content{
+        justify-content: center;
+    }
+
+    .social-media{
+        width: 80%;
+        justify-content: space-evenly;
+    }
+
+    .social-media-icon{
+        margin-left: 0;
+    }
+
+    .social-media{
+        margin-left: 0;
+    }
+
+    .contact-us{
+        text-align: center;
+        width: 80%;
+        margin-bottom: 40px;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+
+    .menu-navegacion{
+        width: 65vw;
+    }
+
+    .hamburger{
+        top: 20px;
+        right: 20px;
+    }
+
+    .titulo{
+        font-size: 30px;
+    }
+
+    .subtitulo{
+        font-size: 30px;
+    }
+
+    .agregar-imagen{
+        width: 95%;
+    }
+
+    .img-galeria{
+        width: 95%;
+    }
+
+    .social-media{
+        width: 100%;
+    }
+
+    .contact-us{
+        width: 90%;
+    }
+    
+}
+
+*/
+
+
+
